@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/ai-chat")
-@AllArgsConstructor
 public class ChatController {
 
     private final ChatService chatService;
+
+    public ChatController(ChatService chatService) {
+        this.chatService = chatService;
+    }
 
     @PostMapping
     public String chatReply(@RequestBody String question) {
