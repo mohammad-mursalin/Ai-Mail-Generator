@@ -29,5 +29,25 @@ public class ChatService {
                 .bodyToMono(String.class)
                 .block();
 
+        return extractContentFromResponse(response);
+    }
+
+    private String extractContentFromResponse(String response) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode rootNode = mapper.readTree(response);
+            String content = rootNode
+                    .path("candidates")
+                    .get(0)
+                    .path("content")
+                    .path("parts")
+                    .get(0)
+                    .path("text")
+                    .asText();
+
+            return content;
+        } catch (Exception e) {
+            return "error occurred during processing : " + e.getMessage();
+        }
     }
 }
