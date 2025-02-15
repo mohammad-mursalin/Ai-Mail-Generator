@@ -18,6 +18,16 @@ public class ChatService {
     }
 
     public String generateReply(String message) {
+        Map<String, Object> requestBody = Map.of("contents", new Object[] {
+                Map.of("parts", new Object[] {
+                        Map.of("text", message)})});
+
+        String response = webClient.post()
+                .uri(gemini_api_url + gemini_api_key)
+                .header("Content-Type", "application/json")
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
 
     }
 }
