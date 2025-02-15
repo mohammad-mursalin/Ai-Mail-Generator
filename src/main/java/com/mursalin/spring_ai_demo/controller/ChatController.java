@@ -16,7 +16,7 @@ public class ChatController {
 //    }
 
     @PostMapping
-    public String chatReply(@RequestBody String message) {
-        return chatService.generateReply(message);
+    public String chatReply(@RequestBody String question) {
+        return chatService.generateReply(question);
     }
 }
