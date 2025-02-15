@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mursalin</groupId>
-	<artifactId>ai-mail-generator</artifactId>
+	<artifactId>ai-response-generator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ai-mail-generator</name>
+	<name>ai-response-generator</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

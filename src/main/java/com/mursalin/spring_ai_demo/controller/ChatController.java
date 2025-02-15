@@ -11,10 +11,6 @@ public class ChatController {
 
     private final ChatService chatService;
 
-//    public ChatController(ChatService chatService) {
-//        this.chatService = chatService;
-//    }
-
     @PostMapping
     public String chatReply(@RequestBody String question) {
         return chatService.generateReply(question);
