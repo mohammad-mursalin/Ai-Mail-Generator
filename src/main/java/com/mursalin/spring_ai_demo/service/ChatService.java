@@ -25,6 +25,7 @@ public class ChatService {
         String response = webClient.post()
                 .uri(gemini_api_url + gemini_api_key)
                 .header("Content-Type", "application/json")
+                .bodyValue(requestBody)
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
